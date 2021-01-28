@@ -1,0 +1,23 @@
+{% extends "tasks/base.html" %}
+
+{% block body %}
+
+<div class="center-column">
+    <p>
+        Are you sure You want to delete {{item}} ?
+    </p>
+
+    <a class="btn btn-block btn-success"
+        href="{% url 'home' %}">Cancel</a>
+
+    <form method="POST"
+        action="">
+        {% csrf_token %}
+        <input class="btn btn-danger"
+            type="submit"
+            name="delete"
+            value=" Yes, Delete it">
+    </form>
+</div>
+
+{% endblock %}
